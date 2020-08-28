@@ -1,7 +1,10 @@
+import { generateId } from "../utils.js"
+
 export default class List {
     constructor(title) {
         this.title = title
         this.tasks = []
+        this.id = generateId()
     }
 
     get Template() {
@@ -10,6 +13,7 @@ export default class List {
         <div class="card">
         <div class="card-header">
           ${this.title}
+          <button type="button" class="btn btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete</button>
         </div>
         <div class="card-body">
           <div class="form-check">

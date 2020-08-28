@@ -5,7 +5,7 @@ function _draw(){
   let template = ''
   STORE.State.lists.forEach(l => template += l.Template)
   document.getElementById("lists").innerHTML = template
-
+  
 }
 
 //Public
@@ -22,7 +22,10 @@ export default class ListsController {
     _draw();
   }
 
-  deleteList(){}
+  deleteList(id){
+    ListsService.deleteList(id)
+    _draw()
+  }
 
   newItem(){}
 
