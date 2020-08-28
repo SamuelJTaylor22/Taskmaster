@@ -5,8 +5,6 @@ import store from "../store.js";
 class ListsService {
   newItem(item, id) {
     let fList = store.State.lists.find(l => l.id == id)
-    console.log(fList);
-    console.log(item);
     fList.tasks.push(item)
   }
 
@@ -22,6 +20,7 @@ class ListsService {
   newList(title) {
     let newList = new List(title)
     store.State.lists.push(newList)
+    console.log(store.State.lists)
   }
 
   

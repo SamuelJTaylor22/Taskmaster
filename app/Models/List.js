@@ -1,8 +1,9 @@
 import { generateId } from "../utils.js"
 
 export default class List {
-    constructor({title, tasks}) {
+    constructor({title, color, tasks}) {
         this.title = title
+        this.color = color || ''
         this.tasks = tasks || []
         this.id = generateId()
     }
@@ -11,7 +12,7 @@ export default class List {
         return `
         <section class = "col-md-4"
         <div class="card">
-        <div class="card-header">
+        <div class="card-header ${this.colorPicker}">
           ${this.title}
           <button type="button" class="btn btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete</button>
         </div>
@@ -42,6 +43,15 @@ export default class List {
 
 
         return template
+    }
+
+    get colorPicker(){
+        switch(this.color){
+            case "Blue": return "bg-primary";
+            case "Green": return "bg-success";
+            case "Grey": return "bg-secondary";
+        }
+
     }
 
 }

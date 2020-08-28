@@ -6,7 +6,6 @@ function _draw(){
   STORE.State.lists.forEach(l => template += l.Template)
   document.getElementById("lists").innerHTML = template
   STORE.saveState()
-  console.log(STORE.State.lists)
 }
 
 //Public
@@ -19,7 +18,9 @@ export default class ListsController {
     event.preventDefault();
     let form = event.target
     // @ts-ignore
-    ListsService.newList({title: form.list.value})
+    let color = form.color.value;
+    // @ts-ignore
+    ListsService.newList({title: form.list.value, color: color})
     _draw();
   }
 
