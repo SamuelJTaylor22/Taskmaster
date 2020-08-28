@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>taskmaster</title>
+</head>
+
+<body>
+
+    <header class="container-fluid bg-primary">
+        <div class="row  text-light">
+            <div class="col">
+                <h1>Hello Task</h1>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <form onsubmit="" class="form-inline">
+                    <div class="form-group">
+                        <label for="list">New List</label>
+                        <input type="text" name="list" id="list" class="form-control" placeholder="Title">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col" id="lists">
+
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid bg-primary ">
+        <div class="row text-light">
+            <div class="col">
+                <h5>Made with sweat and tears by Sam</h5>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
