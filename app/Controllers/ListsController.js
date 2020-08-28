@@ -27,7 +27,11 @@ export default class ListsController {
     _draw()
   }
 
-  newItem(){}
+  newItem(id){
+    event.preventDefault()
+    let item = event.target.item.value
+    ListsService.newItem(item ,id)
+  }
 
   deleteItem(){}
 

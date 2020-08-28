@@ -23,6 +23,13 @@ export default class List {
             </label>
           </div>
         </div>
+        <form class="form-inline" onsubmit ="app.listsController.newItem('${this.id}')" >
+        <div class="form-group">
+            <label for="item"></label>
+            <input type="text" name="item" id="item" class="form-control" placeholder="new item">
+            <button type="submit" class="btn btn-outline-primary">Add</button>
+        </div>
+    </form>
       </div>
         </section>
         `
