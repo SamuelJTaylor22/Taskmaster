@@ -5,7 +5,8 @@ function _draw(){
   let template = ''
   STORE.State.lists.forEach(l => template += l.Template)
   document.getElementById("lists").innerHTML = template
-  
+  STORE.saveState()
+  console.log(STORE.State.lists)
 }
 
 //Public
@@ -18,22 +19,28 @@ export default class ListsController {
     event.preventDefault();
     let form = event.target
     // @ts-ignore
-    ListsService.newList(form.list.value)
+    ListsService.newList({title: form.list.value})
     _draw();
   }
 
   deleteList(id){
-    ListsService.deleteList(id)
+    if(window.confirm("Are you sure you want to delete this list?")){
+    ListsService.deleteList(id)}
     _draw()
   }
 
   newItem(id){
     event.preventDefault()
+    // @ts-ignore
     let item = event.target.item.value
     ListsService.newItem(item ,id)
+    _draw()
   }
 
-  deleteItem(){}
+  deleteItem(item, id){
+    if(window.confirm("Are you sure you want to delete this item?")){ListsService.deleteItem(item, id)}
+    _draw()
+  }
 
 
 }

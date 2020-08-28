@@ -2,7 +2,8 @@ import List from "./Models/List.js";
 
 let _state = {
     /** @type {List[]} */
-  lists: [new List("Sweet")]
+  // @ts-ignore
+  lists: [new List({title:"Sweet"})]
 };
 
 function _loadState() {

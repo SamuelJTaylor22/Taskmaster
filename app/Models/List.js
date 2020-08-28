@@ -1,9 +1,9 @@
 import { generateId } from "../utils.js"
 
 export default class List {
-    constructor(title) {
+    constructor({title, tasks}) {
         this.title = title
-        this.tasks = []
+        this.tasks = tasks || []
         this.id = generateId()
     }
 
@@ -16,12 +16,7 @@ export default class List {
           <button type="button" class="btn btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete</button>
         </div>
         <div class="card-body">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              first task
-            </label>
-          </div>
+            ${this.itemTemplate}
         </div>
         <form class="form-inline" onsubmit ="app.listsController.newItem('${this.id}')" >
         <div class="form-group">
@@ -36,12 +31,17 @@ export default class List {
     }
 
     get itemTemplate(){
-        return `<div class="form-check">
+        let template = ''
+        this.tasks.forEach(t => template += `<div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
         <label class="form-check-label" for="defaultCheck1">
-          Default checkbox
-        </label>
-      </div>`
+        ${t} 
+        </div> <i class="fas fa-trash" onclick="app.listsController.deleteItem( '${t}','${this.id}')"></i>
+        </label> 
+        `)
+
+
+        return template
     }
 
 }
