@@ -2,7 +2,7 @@ import List from "./Models/List.js";
 
 let _state = {
     /** @type {List[]} */
-  lists: []
+  lists: [new List("Sweet")]
 };
 
 function _loadState() {

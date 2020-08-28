@@ -1,11 +1,36 @@
 export default class List {
-    constructor(title, color) {
+    constructor(title) {
         this.title = title
-        this.color = color
         this.tasks = []
     }
 
     get Template() {
-        return this.title
+        return `
+        <section class = "col-md-4"
+        <div class="card">
+        <div class="card-header">
+          ${this.title}
+        </div>
+        <div class="card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              first task
+            </label>
+          </div>
+        </div>
+      </div>
+        </section>
+        `
     }
+
+    get itemTemplate(){
+        return `<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Default checkbox
+        </label>
+      </div>`
+    }
+
 }

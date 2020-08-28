@@ -20,9 +20,9 @@
         </div>
     </header>
     <main class="container">
-        <div class="row">
+        <div class="row my-4">
             <div class="col-12">
-                <form onsubmit="" class="form-inline">
+                <form onsubmit="app.listsController.newList()" class="form-inline">
                     <div class="form-group">
                         <label for="list">New List</label>
                         <input type="text" name="list" id="list" class="form-control" placeholder="Title">
@@ -30,9 +30,9 @@
                     </div>
                 </form>
             </div>
-            <div class="col" id="lists">
-
-            </div>
+        </div>
+        <div class="row" id="lists">
+                    
         </div>
     </main>
     <footer class="container-fluid bg-primary ">
