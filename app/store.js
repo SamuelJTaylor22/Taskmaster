@@ -3,7 +3,7 @@ import List from "./Models/List.js";
 let _state = {
     /** @type {List[]} */
   // @ts-ignore
-  lists: [new List({title:"Sweet"})]
+  lists: [new List({title:"Example List", color:"Blue"})]
 };
 
 function _loadState() {

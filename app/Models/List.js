@@ -12,7 +12,7 @@ export default class List {
         return `
         <section class = "col-md-4"
         <div class="card">
-        <div class="card-header ${this.colorPicker}">
+        <div class="card-header ${this.colorPicker} text-light">
           ${this.title}
           <button type="button" class="btn btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete</button>
         </div>
